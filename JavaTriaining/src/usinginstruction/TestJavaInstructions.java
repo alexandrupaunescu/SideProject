@@ -1,23 +1,23 @@
-package usinginstructions;
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package usinginstruction;
 
 import java.util.LinkedList;
 
-/*
- *Test Java intuctions   
-package usinginstructions;
-
 /**
  *
- * Test Java intuctions  
+ * @author Dinamo
  */
-public class TestJavaIntructions {
+public class TestJavaInstructions {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // test if instructions
+               // test if instructions
         String intersection = "left";   
         if("Left".equals(intersection)){
             System.out.println("Go left!");
@@ -66,13 +66,6 @@ public class TestJavaIntructions {
          System.out.println("Element value is "+currentElements.intValue());
          }
            
-
-        }
-        
-        
-        
-        
-        
     }
     
-
+}
