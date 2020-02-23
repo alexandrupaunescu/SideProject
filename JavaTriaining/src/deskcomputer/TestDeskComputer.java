@@ -19,7 +19,7 @@ public class TestDeskComputer {
         dc.pushKey(DeskComputerButton.ButtonMarkups.KEY_1);
         dc.pushKey(DeskComputerButton.ButtonMarkups.KEY_2);
         dc.pushKey(DeskComputerButton.ButtonMarkups.KEY_3);
-        // introduce the operatin
+        // introduce the operatin.
         dc.pushKey(DeskComputerButton.ButtonMarkups.KEY_PLUS);
         //introduce second operand
         dc.pushKey(DeskComputerButton.ButtonMarkups.KEY_3);
