@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="Css/mycss.css" >
+        <link rel="stylesheet" type="text/css" href="css/mycss.css" >
         <title>PERSONS</title>
     </head>
     <body>
@@ -17,11 +17,12 @@
         
         <ul>
             <li>
-                Create perons report using a servlet. <a href="./ListOfPersons">Click here :</a>
+                Create persons report using a servlet. <a href="./ListOfPersons">Click here :</a>
             </li>
             <li>
-                Create test report using a servlet. <a href="./TestServlet">Click here :</a>
+                Create test report using a Jsp <a href="./getallpersons.jsp">Click here :</a>
             </li>
+           
         </ul>
     </body>
 </html>
