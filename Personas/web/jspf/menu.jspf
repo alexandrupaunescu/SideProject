@@ -36,6 +36,8 @@
                 <li><a href="#">Reports</a>
                     <ul>
                         <li><a href="./getallpersons.jsp">Personas</a></li>
+                        <li><a href="./admincities.jsp">Cities</a></li>
+                        <li><a href="./adminregions.jsp">Regions</a></li>
                     </ul>
                 </li>    
             </c:when>

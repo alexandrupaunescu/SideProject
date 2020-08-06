@@ -65,7 +65,7 @@ public class Login extends HttpServlet {
                         String username = resultSet.getString(2);
                         String role = resultSet.getString(3);
                         // set a variablein session to keep it for a user as logged
-                        // set another ariable to keep the role of actual user for loading the menu for an admin or for a user
+                        // set another variable to keep the role of actual user for loading the menu for an admin or for a user
                         // if user is a registered one  the main.jsp page after
                         request.getSession().setAttribute("role", role);// this will be used to display the menu in main.jsp page
                         request.getSession().setAttribute("actualUserRole", username);// this will be used if neededin other page

@@ -32,10 +32,6 @@
         <servlet-name>Registration</servlet-name>
         <servlet-class>servlets.Registration</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>TetsRegister</servlet-name>
-        <servlet-class>servlets.TetsRegister</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>AdminUsers</servlet-name>
         <url-pattern>/AdminUsers</url-pattern>
@@ -67,10 +63,6 @@
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
         <url-pattern>/Registration</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>TetsRegister</servlet-name>
-        <url-pattern>/TetsRegister</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

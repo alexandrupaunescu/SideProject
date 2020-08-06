@@ -17,6 +17,7 @@
     </head>
     <body>
         <form action="${pageContext.request.contextPath}/GetAllPersons" >
+            <%@ include file="jspf/menu.jspf" %>
     <sql:setDataSource
                           var="snapshot"
                           driver="org.apache.derby.jdbc.ClientDriver"
