@@ -11,6 +11,15 @@ package servlets;
  */
 public class RegisterBean {
     private String myHash;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getMyHash() {
         return myHash;

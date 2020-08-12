@@ -63,15 +63,16 @@ public class Registration extends HttpServlet {
             String address  = request.getParameter("address");
             String age  = request.getParameter("age");
                 
-            String newPword = DigestUtils.md5Hex(pas);// DigestUtils comes from commons-codec-1.7.jar (For Generate Encrypt Text)
-                //Generate hash Code which helps in Activation Link
-                String myHash;
-                Random random = new Random();
-                random.nextInt(999999);
-                myHash = DigestUtils.md5Hex(""+random);// DigestUtils comes from commons-codec-1.7.jar (For Generate Encrypt Text)
-                //New create data bean
-                RegisterBean rb = new RegisterBean();
-                rb.setMyHash(myHash);
+            //String newPword = DigestUtils.md5Hex(pas);// DigestUtils comes from commons-codec-1.7.jar (For Generate Encrypt Text)
+            
+            //Generate Hash Code which helps in Activation Link
+            String myHash;
+            Random random = new Random();
+            random.nextInt(999999);
+            myHash = DigestUtils.md5Hex(""+random);// DigestUtils comes from commons-codec-1.7.jar (For Generate Encrypt Text)
+            //New create data bean
+            RegisterBean rb = new RegisterBean();
+            rb.setMyHash(myHash);
                 
                 
                 
@@ -93,10 +94,13 @@ public class Registration extends HttpServlet {
                 while(rs.next()){
                     lastId = rs.getInt(1);
                 }
+                SendingEmail se = new SendingEmail(email, myHash);
+                se.sendEmail();
+                
                 //lastId contains number of rows
-                String insertQuerry = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String insertQuerry = "INSERT INTO USERS VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 statement = connection.prepareStatement(insertQuerry);
-                statement.setInt(1, lastId + 1);
+                statement.setInt(1, lastId + 331);
                 statement.setString(2, un);
                 statement.setString(3, pas);
                 statement.setString(4, DEFAULT_USER_ROLE);
@@ -108,13 +112,16 @@ public class Registration extends HttpServlet {
                 statement.setString(10, date);
                 statement.setString(11, address);
                 statement.setString(12, age);
+                statement.setString(13, myHash);
+                statement.setString(14, "A");
                 statement.execute();
                 //statement.executeUpdate("INSERT INTO USERS VALUES("+un+"','"+pas+"','"+name+"','"+surname+"','"+phone+"','"+email+"','"+gender+"','"+date+"','"+address+"')");
                 
                 int i = ptsml.executeUpdate();
                 if(i!=0){
                     // Sendig Email Code
-                    SendingEmail se = new SendingEmail(email, myHash);
+                    //SendingEmail se = new SendingEmail(email, myHash);
+                    //se.sendEmail();
                 }
             }
              catch (ClassNotFoundException | SQLException ex)
@@ -156,7 +163,7 @@ public class Registration extends HttpServlet {
             }
             // forward control to the same jsp - register.jsp ==> this will reload master view with new row inserted if everything is ok
         // redirect page to its JSP as view
-                    request.getRequestDispatcher("./index.jsp").forward(request, response);
+                    request.getRequestDispatcher("./verifypage.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
